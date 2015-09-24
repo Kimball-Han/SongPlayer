@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MusicCenterController">
+            <connections>
+                <outlet property="_leftTimelb" destination="ska-xW-Iru" id="RTF-LR-ChB"/>
+                <outlet property="bgImage" destination="IXW-eu-RZ6" id="FdP-yj-G9d"/>
+                <outlet property="page" destination="AuI-Ch-caz" id="glF-Iz-5kO"/>
+                <outlet property="playbutton" destination="3r8-Ni-ab9" id="9rL-7V-3so"/>
+                <outlet property="rightTimeLb" destination="QgZ-nf-veC" id="BfS-ly-ELu"/>
+                <outlet property="rootScrollView" destination="8sH-xg-wPc" id="uTn-DX-bcm"/>
+                <outlet property="slider" destination="skc-VR-vJh" id="uAu-N7-bLO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bt_mymusic_time_bg_afternoon@3x.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-eu-RZ6">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-xg-wPc">
+                    <rect key="frame" x="0.0" y="60" width="320" height="400"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AuI-Ch-caz">
+                    <rect key="frame" x="141" y="17" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMv-li-jxv">
+                    <rect key="frame" x="23" y="24" width="43" height="24"/>
+                    <state key="normal" image="bt_playlist_choice_press.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="fv5-1e-oo4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX4-E3-aXj">
+                    <rect key="frame" x="259" y="24" width="24" height="24"/>
+                    <state key="normal" image="bt_playlistdetails_share_press.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sharetoweibo:" destination="-1" eventType="touchUpInside" id="69W-1s-Xeu"/>
+                    </connections>
+                </button>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="skc-VR-vJh">
+                    <rect key="frame" x="-28" y="455" width="376" height="31"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3r8-Ni-ab9">
+                    <rect key="frame" x="130" y="492" width="60" height="60"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="playAndpause:" destination="-1" eventType="touchUpInside" id="xdE-R6-LXX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awP-ls-CDO">
+                    <rect key="frame" x="69" y="510" width="23" height="23"/>
+                    <state key="normal" image="bt_playpagen_control_previous_normal@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shangyishou:" destination="-1" eventType="touchUpInside" id="rhD-b3-AIx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3m-SN-5bH">
+                    <rect key="frame" x="218" y="510" width="23" height="23"/>
+                    <state key="normal" image="bt_playpagen_control_next_normal@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextstem:" destination="-1" eventType="touchUpInside" id="7rI-sP-DeP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLk-ls-4F8">
+                    <rect key="frame" x="12" y="510" width="23" height="23"/>
+                    <state key="normal" image="bt_playpagen_control_order_normal@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bofangmoshi:" destination="-1" eventType="touchUpInside" id="qeH-xT-QCi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY5-QJ-Ejv">
+                    <rect key="frame" x="285" y="510" width="23" height="23"/>
+                    <state key="normal" image="bt_playpagen_control_eq_normal@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tiaozhiqi:" destination="-1" eventType="touchUpInside" id="OaY-NR-PS1"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgZ-nf-veC">
+                    <rect key="frame" x="285" y="488" width="35" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ska-xW-Iru">
+                    <rect key="frame" x="8" y="486" width="35" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="-46" y="-9"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bt_mymusic_time_bg_afternoon@3x.jpg" width="1242" height="2208"/>
+        <image name="bt_playlist_choice_press.png" width="24" height="24"/>
+        <image name="bt_playlistdetails_share_press.png" width="24" height="24"/>
+        <image name="bt_playpagen_control_eq_normal@3x.png" width="78" height="78"/>
+        <image name="bt_playpagen_control_next_normal@3x.png" width="78" height="78"/>
+        <image name="bt_playpagen_control_order_normal@3x.png" width="78" height="78"/>
+        <image name="bt_playpagen_control_previous_normal@3x.png" width="78" height="78"/>
+    </resources>
+</document>

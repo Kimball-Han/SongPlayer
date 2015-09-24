@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DfM-Kb-LxN" customClass="MenuView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyF-QL-ZSa">
+                    <rect key="frame" x="177" y="13" width="56" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-22" minY="27" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="11" minY="-23" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="我的喜欢" image="list_icon_music_man.png">
+                        <color key="titleColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeF-3Y-bCh">
+                    <rect key="frame" x="8" y="13" width="56" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    <inset key="titleEdgeInsets" minX="-22" minY="27" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="11" minY="-17" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="我的下载" image="list_icon_local_music.png">
+                        <color key="titleColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIM-ha-a1o">
+                    <rect key="frame" x="251" y="13" width="56" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-22" minY="27" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="16" minY="-17" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="音乐库" image="list_btn_greyearth.png">
+                        <color key="titleColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqN-3j-aAL">
+                    <rect key="frame" x="89" y="13" width="56" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-22" minY="27" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="15" minY="-17" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="本地音乐" image="list_icon_music_cd.png">
+                        <color key="titleColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="MusicList" destination="cIM-ha-a1o" id="lhq-6R-8nc"/>
+                <outlet property="localButton" destination="HeF-3Y-bCh" id="Xnp-dC-d3e"/>
+                <outlet property="myLIst" destination="IyF-QL-ZSa" id="uO6-3g-DGP"/>
+                <outlet property="shoucang" destination="oqN-3j-aAL" id="LTy-JV-4Os"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="113.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="list_btn_greyearth.png" width="24" height="24"/>
+        <image name="list_icon_local_music.png" width="20" height="20"/>
+        <image name="list_icon_music_cd.png" width="24" height="24"/>
+        <image name="list_icon_music_man.png" width="24" height="24"/>
+    </resources>
+</document>
