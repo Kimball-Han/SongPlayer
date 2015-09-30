@@ -13,6 +13,7 @@
 #import "BangModel.h"
 #import "BangCell.h"
 #import "MessageCenter.h"
+#import "SongClass.h"
 @implementation BangdanView
 
 {
@@ -70,7 +71,7 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(150, 205) ;
+    return CGSizeMake((Screen_Width-20)/2.0, (Screen_Width-20)*4.0/6.0) ;
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

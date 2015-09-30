@@ -12,6 +12,7 @@
 #import <MJRefresh.h>
 #import "RequestUrl.h"
 #import "HttpRequest.h"
+#import "SongClass.h"
 @interface BaseViewController : UIViewController
 
 @end

@@ -9,7 +9,7 @@
 #ifndef SongPlayer_RequestUrl_h
 #define SongPlayer_RequestUrl_h
 #define WeatherUrl @"http://wanapi.damai.cn/weather.json?cityname=%@&source=10345&useCash=false"
-#define guessYourlikeUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.userRecSongList&from=ios&bduss=25lQzlrTm5adDZ-V0lVa2t6SExNTnZIOWU3dk1wSTZNb3J0WnFkb0R-S0habGRWQVFBQUFBJCQAAAAAAAAAAAEAAADdUwg-uq52dna35wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIfZL1WH2S9VU&version=5.2.1"
+#define guessYourlikeUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.userRecSongList&from=ios&bduss=25lQzlrTm5adDZ-V0lVa2t6SExNTnZIOWU3dk1wSTZNb3J0WnFkb0R-S0habGRWQVFBQUFBJCQAAAAAAAAAAAEAAADdUwg-uq52dna35wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIfZL1WH2S9VU&version=5.2.10"
 #define firstUpUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.plaza.getFocusPic&format=json"
 #define firstMobUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.getHotGeDanAndOfficial&num=6"
 #define firstBotUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.plaza.getRecommendAlbum&format=json&offset=0&limit=4&type=2"

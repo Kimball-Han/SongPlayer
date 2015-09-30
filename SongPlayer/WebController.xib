@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebController">
@@ -24,17 +25,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAS-e4-3wi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-3o-yGv">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-3o-yGv">
                             <rect key="frame" x="15" y="26" width="31" height="26"/>
-                            <state key="normal" image="ic_recommend_back_normal@3x.png">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="gTe-zo-Ajm"/>
+                            </constraints>
+                            <state key="normal" image="ic_recommend_back_normal.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="pop:" destination="-1" eventType="touchUpInside" id="Sq6-TN-bss"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-zV-hU9">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-zV-hU9">
                             <rect key="frame" x="58" y="28" width="204" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="204" id="c2j-JJ-fyU"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -43,6 +50,11 @@
                     <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="0pO-Jl-xje"/>
+                        <constraint firstItem="tKD-zV-hU9" firstAttribute="centerX" secondItem="AAS-e4-3wi" secondAttribute="centerX" id="2wv-1e-syC"/>
+                        <constraint firstAttribute="bottom" secondItem="ezi-3o-yGv" secondAttribute="bottom" constant="8" id="MMG-gU-0yy"/>
+                        <constraint firstItem="ezi-3o-yGv" firstAttribute="leading" secondItem="AAS-e4-3wi" secondAttribute="leading" constant="15" id="ptZ-My-k2f"/>
+                        <constraint firstItem="tKD-zV-hU9" firstAttribute="top" secondItem="AAS-e4-3wi" secondAttribute="top" constant="28" id="r96-kb-mgX"/>
+                        <constraint firstItem="ezi-3o-yGv" firstAttribute="top" secondItem="AAS-e4-3wi" secondAttribute="top" constant="26" id="s21-if-c84"/>
                     </constraints>
                 </view>
             </subviews>
@@ -61,6 +73,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_recommend_back_normal@3x.png" width="78" height="78"/>
+        <image name="ic_recommend_back_normal.png" width="26" height="26"/>
     </resources>
 </document>

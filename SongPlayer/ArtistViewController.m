@@ -31,7 +31,7 @@
 }
 - (IBAction)morecate:(id)sender {
     [UIView animateWithDuration:0.5 animations:^{
-        _abc.frame=CGRectMake(0, self.view.bounds.size.height-360, self.view.bounds.size.width, self.view.bounds.size.height);
+        _abc.frame=CGRectMake(0, Screen_Height-360, Screen_Width, 360);
     }];
 }
 
@@ -40,7 +40,7 @@
     _tabeview.delegate=self;
     _tabeview.dataSource=self;
     self.namelb.text=self.name;
-    _abc=[[ABCView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, 0)];
+    _abc=[[ABCView alloc] initWithFrame:CGRectMake(0, Screen_Height, Screen_Width, 0)];
     [self.view addSubview:_abc];
     __weak ArtistViewController *weakSelf=self;
     __weak ABCView *weakAbc=_abc;
@@ -51,7 +51,7 @@
             [weakSelf addrefresh];
         }
         [UIView animateWithDuration:0.5 animations:^{
-            weakAbc.frame=CGRectMake(0, weakSelf.view.bounds.size.height,weakSelf.view.bounds.size.width, 0);
+            weakAbc.frame=CGRectMake(0, Screen_Height,Screen_Width, 0);
             
         }];
 

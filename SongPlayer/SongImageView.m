@@ -23,8 +23,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-      _image=[[UIImageView alloc] initWithFrame:CGRectMake(0, 48, self.bounds.size.width, self.bounds.size.width)];
+        self.layer.masksToBounds=YES;
+        self.clipsToBounds=YES;
+        _image=[[UIImageView alloc] initWithFrame:CGRectMake(0, 32, self.bounds.size.width, self.bounds.size.height-65)];
+        [_image setContentMode:UIViewContentModeScaleAspectFit];
+        _image.clipsToBounds=YES;
+        _image.layer.masksToBounds=YES;
         [self addSubview:_image];
+        
         _label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 30)];
         _label.textAlignment=NSTextAlignmentCenter;
         _label.textColor=[UIColor whiteColor];
@@ -32,16 +38,16 @@
         [PlayerCenter sharePlayerCenter].imageview=^{
             [self loadimage];
         };
-      _downButton=[UIButton buttonWithType:UIButtonTypeCustom];
-       _mvButton=[UIButton buttonWithType:UIButtonTypeCustom];
-      _faButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        _downButton.frame=CGRectMake(self.bounds.size.width-50, _image.frame.size.height+52, 28, 28);
-      _downButton.tag=10;
-       
-        _mvButton.frame=CGRectMake(self.bounds.size.width-100, _image.frame.size.height+52, 28, 28);
+        _downButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        _mvButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        _faButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        _downButton.frame=CGRectMake(self.bounds.size.width-50, self.bounds.size.height-28, 28, 28);
+        _downButton.tag=10;
+        
+        _mvButton.frame=CGRectMake(self.bounds.size.width-100, self.bounds.size.height-28, 28, 28);
         _mvButton.tag=11;
-        _faButton.frame=CGRectMake(self.bounds.size.width-150, _image.frame.size.height+52, 28, 28);
-       _faButton.tag=12;
+        _faButton.frame=CGRectMake(self.bounds.size.width-150, self.bounds.size.height-28, 28, 28);
+        _faButton.tag=12;
         [_downButton setImage:[UIImage imageNamed:@"bt_list_more_down02_press"] forState:UIControlStateSelected];
         [_downButton setImage:[UIImage imageNamed:@"bt_list_more_down02_normal"] forState:UIControlStateNormal];
         [_mvButton setImage:[UIImage imageNamed:@"bt_list_more_mtv_press"] forState:UIControlStateSelected];
@@ -68,7 +74,7 @@
 {   PlayerCenter *ce= [PlayerCenter sharePlayerCenter];
     
     _label.text=[NSString stringWithFormat:@"%@-%@",ce.m.name,ce.m.author];
-     [_image setImageWithURL:[NSURL URLWithString:ce.m.imgUrl]placeholderImage:[UIImage imageNamed:@"35.jpg"]];
+    [_image setImageWithURL:[NSURL URLWithString:ce.m.imgUrl]placeholderImage:[UIImage imageNamed:@"35.jpg"]];
     self.image11.image=_image.image;
 }
 @end

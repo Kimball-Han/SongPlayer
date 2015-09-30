@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
@@ -17,13 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-Qi-8Hi">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-Qi-8Hi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-Fg-AzY">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-Fg-AzY">
                     <rect key="frame" x="15" y="26" width="31" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="31" id="GS5-4a-X6Y"/>
+                        <constraint firstAttribute="height" constant="26" id="Jch-Ak-hRX"/>
+                    </constraints>
                     <state key="normal" image="ic_recommend_back_normal@3x.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,11 +36,15 @@
                         <action selector="buttontouch:" destination="-1" eventType="touchUpInside" id="jYd-xb-nVO"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Pn-4V-a3x">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pn-4V-a3x">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-4D-zrx">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-4D-zrx">
                             <rect key="frame" x="15" y="26" width="31" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="OFi-sP-nfu"/>
+                                <constraint firstAttribute="height" constant="26" id="ve5-aY-U5E"/>
+                            </constraints>
                             <state key="normal" image="ic_recommend_back_normal@3x.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -43,17 +52,38 @@
                                 <action selector="buttontouch:" destination="-1" eventType="touchUpInside" id="TeH-tD-upH"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWL-8M-UOG">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWL-8M-UOG">
                             <rect key="frame" x="58" y="31" width="204" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="204" id="FMv-ad-lfx"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="sl4-4D-zrx" firstAttribute="leading" secondItem="4Pn-4V-a3x" secondAttribute="leading" constant="15" id="IW9-Bo-VPm"/>
+                        <constraint firstItem="sl4-4D-zrx" firstAttribute="top" secondItem="4Pn-4V-a3x" secondAttribute="top" constant="26" id="ThR-Ox-leq"/>
+                        <constraint firstItem="OWL-8M-UOG" firstAttribute="centerX" secondItem="4Pn-4V-a3x" secondAttribute="centerX" id="a15-nG-CUq"/>
+                        <constraint firstItem="OWL-8M-UOG" firstAttribute="top" secondItem="4Pn-4V-a3x" secondAttribute="top" constant="31" id="cJb-J4-elV"/>
+                        <constraint firstAttribute="height" constant="60" id="idL-4h-JFr"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4Pn-4V-a3x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1wE-Y4-wYZ"/>
+                <constraint firstItem="Ndf-Qi-8Hi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Yf-I3-hsk"/>
+                <constraint firstItem="Ndf-Qi-8Hi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K4C-AL-fyt"/>
+                <constraint firstItem="Sh0-Fg-AzY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="KhQ-Hc-EQb"/>
+                <constraint firstAttribute="trailing" secondItem="4Pn-4V-a3x" secondAttribute="trailing" id="Mbu-28-tdb"/>
+                <constraint firstAttribute="trailing" secondItem="Ndf-Qi-8Hi" secondAttribute="trailing" id="W2B-AM-dja"/>
+                <constraint firstAttribute="bottom" secondItem="Ndf-Qi-8Hi" secondAttribute="bottom" id="XO8-mf-TkI"/>
+                <constraint firstItem="4Pn-4V-a3x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sMa-hM-Q98"/>
+                <constraint firstItem="Sh0-Fg-AzY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="thQ-68-DLd"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

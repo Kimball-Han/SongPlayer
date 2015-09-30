@@ -31,7 +31,7 @@
 //天气模块的数据请求和刷新
 -(void)weatherrefresh
 {
-    [[HttpRequest shareRequestManager] getWeatherInfoUrl:[NSString stringWithFormat:WeatherUrl,@"郑州市"] returnData:^(id response,NSError *error){
+    [[HttpRequest shareRequestManager] getWeatherInfoUrl:[NSString stringWithFormat:WeatherUrl,@"上海市"] returnData:^(id response,NSError *error){
         //从数据中提取日期
         NSString *date1=response[@"date"];
         //从日期中提取今天是几号

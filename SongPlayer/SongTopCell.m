@@ -13,6 +13,7 @@
 #import "RequestUrl.h"
 #import "HttpRequest.h"
 #import "MessageCenter.h"
+#import "SongClass.h"
 @implementation SongTopCell
 {
     
@@ -38,7 +39,7 @@
 {
     for (int i=0; i<_dataArr.count; i++) {
         ArtistModel *model=_dataArr[i];
-        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(8*(i/3+1)+98*i, 0, 90, 90)];
+        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake((Screen_Width-290)/4.0*(i/3+1)+(90+(Screen_Width-290)/4.0)*i, 0, 90, 90)];
         [_scrollView addSubview:imageView];
         imageView.userInteractionEnabled=YES;
         imageView.tag=10+i;
@@ -47,7 +48,7 @@
         [imageView addGestureRecognizer:tap];
         
         [_scrollView addSubview:imageView];
-        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(8*(i/3+1)+98*i, 98, 90, 30)];
+        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake((Screen_Width-290)/4.0*(i/3+1)+(90+(Screen_Width-290)/4.0)*i, 90, 90, 30)];
         [_scrollView addSubview:label];
         label.textAlignment=NSTextAlignmentCenter;
         label.text=model.name;

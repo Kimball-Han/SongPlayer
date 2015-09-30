@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,24 +13,41 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="热门歌手" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkn-BF-kkf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门歌手" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkn-BF-kkf">
                         <rect key="frame" x="17" y="15" width="179" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="179" id="NbQ-13-H7S"/>
+                            <constraint firstAttribute="width" secondItem="Lkn-BF-kkf" secondAttribute="height" multiplier="179:21" id="cBB-Wd-3bC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-1e-G6I">
-                        <rect key="frame" x="118" y="179" width="63" height="37"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-dl-xYJ">
+                        <rect key="frame" x="10" y="53" width="300" height="130"/>
+                    </scrollView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-1e-G6I">
+                        <rect key="frame" x="129" y="179" width="63" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="Gxi-b2-VDu"/>
+                        </constraints>
                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="currentPageIndicatorTintColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </pageControl>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-dl-xYJ">
-                        <rect key="frame" x="10" y="53" width="302" height="130"/>
-                    </scrollView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oqL-dl-xYJ" secondAttribute="bottom" constant="26" id="2c7-go-b12"/>
+                    <constraint firstAttribute="trailing" secondItem="oqL-dl-xYJ" secondAttribute="trailing" constant="10" id="Fyy-la-OxS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Vqe-1e-G6I" secondAttribute="bottom" constant="-15" id="XdE-PA-ZRn"/>
+                    <constraint firstItem="oqL-dl-xYJ" firstAttribute="top" secondItem="Lkn-BF-kkf" secondAttribute="bottom" constant="17" id="XwK-Fe-qT7"/>
+                    <constraint firstItem="Lkn-BF-kkf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="ekV-Ap-hQf"/>
+                    <constraint firstItem="Vqe-1e-G6I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rSK-bF-eq8"/>
+                    <constraint firstItem="Lkn-BF-kkf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="vUf-lu-VjL"/>
+                    <constraint firstItem="oqL-dl-xYJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xje-VC-IwC"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="_scrollView" destination="oqL-dl-xYJ" id="vhk-gr-Vw7"/>

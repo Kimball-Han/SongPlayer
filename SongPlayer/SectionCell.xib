@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SEC" id="gTV-IL-0wX" customClass="SectionCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="316" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="316" height="40"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sY-yy-mme">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sY-yy-mme">
                         <rect key="frame" x="266" y="5" width="30" height="30"/>
                         <state key="normal" title="更多">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,8 +22,11 @@
                             <action selector="pushAlbum:" destination="gTV-IL-0wX" eventType="touchUpInside" id="KkT-mz-lXM"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="歌单推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86Y-Nk-Zxe">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌单推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86Y-Nk-Zxe">
                         <rect key="frame" x="17" y="11" width="77" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="77" id="FvM-bS-9if"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -30,12 +34,20 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="320" height="43"/>
+            <constraints>
+                <constraint firstItem="86Y-Nk-Zxe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="BOZ-rR-ZKZ"/>
+                <constraint firstAttribute="bottom" secondItem="1sY-yy-mme" secondAttribute="bottom" constant="5" id="SaX-Ez-asg"/>
+                <constraint firstAttribute="bottom" secondItem="86Y-Nk-Zxe" secondAttribute="bottom" constant="8" id="YyL-be-pwV"/>
+                <constraint firstItem="86Y-Nk-Zxe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="dUQ-mo-80i"/>
+                <constraint firstAttribute="trailing" secondItem="1sY-yy-mme" secondAttribute="trailing" constant="20" id="hPM-fB-WAu"/>
+                <constraint firstItem="1sY-yy-mme" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="qTI-zO-Aqt"/>
+            </constraints>
+            <size key="customSize" width="316" height="43"/>
             <connections>
                 <outlet property="moreButton" destination="1sY-yy-mme" id="U0G-v7-eZz"/>
                 <outlet property="titleLb" destination="86Y-Nk-Zxe" id="wPC-hL-gA3"/>
             </connections>
-            <point key="canvasLocation" x="73" y="94"/>
+            <point key="canvasLocation" x="71" y="94"/>
         </collectionViewCell>
     </objects>
 </document>

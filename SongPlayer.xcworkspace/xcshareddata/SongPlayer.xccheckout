@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>46068528-EC04-4A20-ABA8-1E2AF0A5CFE8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SongPlayer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DD9CFC0CBB9CD7568C2CAE6524107FE84F65550D</key>
+		<string>https://github.com/Kimball12/SongPlayer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SongPlayer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DD9CFC0CBB9CD7568C2CAE6524107FE84F65550D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Kimball12/SongPlayer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DD9CFC0CBB9CD7568C2CAE6524107FE84F65550D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD9CFC0CBB9CD7568C2CAE6524107FE84F65550D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SongPlayer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

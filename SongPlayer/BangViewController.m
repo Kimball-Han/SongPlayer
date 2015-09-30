@@ -60,8 +60,8 @@
    _tableView.delegate=self;
     _tableView.dataSource=self;
      _dataArr=[[NSMutableArray alloc] init];
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
-    _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 200)];
+    _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, Screen_Width, Screen_Width)];
     //[_headImg setImage:[UIImage imageNamed:@"bg.jpg"]];
     
     

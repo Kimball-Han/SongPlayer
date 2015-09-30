@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BangViewController">
@@ -27,39 +28,63 @@
                         <action selector="popview:" destination="-1" eventType="touchUpInside" id="Wwq-qI-CHS"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Xf7-T5-5SZ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Xf7-T5-5SZ">
                     <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xy1-Lc-7Ll">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xy1-Lc-7Ll">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6B-9l-b3k">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6B-9l-b3k">
                             <rect key="frame" x="15" y="26" width="31" height="26"/>
-                            <state key="normal" image="ic_recommend_back_normal@3x.png">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="VD7-ii-12F"/>
+                            </constraints>
+                            <state key="normal" image="ic_recommend_back_normal.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="popview:" destination="-1" eventType="touchUpInside" id="LN9-MP-Nvn"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-Hj-D3Y">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-Hj-D3Y">
                             <rect key="frame" x="108" y="28" width="104" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="104" id="xPW-42-joG"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="e6B-9l-b3k" firstAttribute="leading" secondItem="xy1-Lc-7Ll" secondAttribute="leading" constant="15" id="8Q7-ZU-OtL"/>
+                        <constraint firstItem="e6B-9l-b3k" firstAttribute="top" secondItem="xy1-Lc-7Ll" secondAttribute="top" constant="26" id="Cdp-Dc-Mqj"/>
+                        <constraint firstAttribute="bottom" secondItem="e6B-9l-b3k" secondAttribute="bottom" constant="8" id="MVm-7B-Bo2"/>
+                        <constraint firstItem="6SQ-Hj-D3Y" firstAttribute="centerX" secondItem="xy1-Lc-7Ll" secondAttribute="centerX" id="Uob-dl-guy"/>
+                        <constraint firstAttribute="height" constant="60" id="n5d-GL-mQ0"/>
+                        <constraint firstItem="6SQ-Hj-D3Y" firstAttribute="top" secondItem="xy1-Lc-7Ll" secondAttribute="top" constant="28" id="tsJ-3i-6nu"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xy1-Lc-7Ll" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4UK-KD-wct"/>
+                <constraint firstAttribute="bottom" secondItem="Xf7-T5-5SZ" secondAttribute="bottom" id="D5T-5N-Tf6"/>
+                <constraint firstAttribute="trailing" secondItem="Xf7-T5-5SZ" secondAttribute="trailing" id="GDS-Z6-7Bd"/>
+                <constraint firstItem="Xf7-T5-5SZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HcR-q9-iD1"/>
+                <constraint firstItem="Xf7-T5-5SZ" firstAttribute="top" secondItem="xy1-Lc-7Ll" secondAttribute="bottom" id="Owq-wp-7DX"/>
+                <constraint firstAttribute="trailing" secondItem="xy1-Lc-7Ll" secondAttribute="trailing" id="TLk-l5-grZ"/>
+                <constraint firstItem="xy1-Lc-7Ll" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XtV-RP-S5E"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="-4" y="-1"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_recommend_back_normal@3x.png" width="78" height="78"/>
+        <image name="ic_recommend_back_normal.png" width="26" height="26"/>
+        <image name="ic_recommend_back_normal@3x.png" width="26" height="26"/>
     </resources>
 </document>

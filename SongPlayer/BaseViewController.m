@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "SongClass.h"
 
 @interface BaseViewController ()
 
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden=YES;
-    view1=[[UIImageView alloc] initWithFrame:CGRectMake(12, self.view.bounds.size.height-58, 50, 50)];
+    view1=[[UIImageView alloc] initWithFrame:CGRectMake(12, Screen_Height-58, 50, 50)];
     
     view1.userInteractionEnabled=YES;
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onclick)];

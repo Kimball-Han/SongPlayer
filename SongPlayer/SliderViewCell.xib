@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,19 +13,31 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXk-U5-Wbr">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXk-U5-Wbr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                         <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </scrollView>
-                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="KtQ-Yt-BjU">
-                        <rect key="frame" x="238" y="99" width="76" height="37"/>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="KtQ-Yt-BjU">
+                        <rect key="frame" x="238" y="99" width="76" height="41"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="Et0-rw-acN"/>
+                            <constraint firstAttribute="width" constant="76" id="NxN-6T-uZs"/>
+                        </constraints>
                         <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="currentPageIndicatorTintColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </pageControl>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oXk-U5-Wbr" secondAttribute="trailing" id="DHR-l4-zA6"/>
+                <constraint firstAttribute="trailing" secondItem="KtQ-Yt-BjU" secondAttribute="trailing" constant="6" id="SaQ-fp-oO9"/>
+                <constraint firstAttribute="bottom" secondItem="oXk-U5-Wbr" secondAttribute="bottom" id="aMa-Pu-0B8"/>
+                <constraint firstItem="oXk-U5-Wbr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eKe-Pi-0MF"/>
+                <constraint firstAttribute="bottom" secondItem="KtQ-Yt-BjU" secondAttribute="bottom" id="eqC-vC-inZ"/>
+                <constraint firstItem="oXk-U5-Wbr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ujn-Bd-dtP"/>
+            </constraints>
             <size key="customSize" width="321" height="125"/>
             <connections>
                 <outlet property="pageControl" destination="KtQ-Yt-BjU" id="hb9-rz-All"/>

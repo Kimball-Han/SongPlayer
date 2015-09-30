@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocalViewController">
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-d2-BGq">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-d2-BGq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-e9-FcN">
@@ -37,9 +38,15 @@
                     </subviews>
                     <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="thV-On-6Cc"/>
+                    </constraints>
                 </view>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-Rq-6WH">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-Rq-6WH">
                     <rect key="frame" x="0.0" y="60" width="320" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="uDZ-ks-FCo"/>
+                    </constraints>
                     <segments>
                         <segment title="正在下载"/>
                         <segment title="已完成"/>
@@ -48,12 +55,24 @@
                         <action selector="segselsect:" destination="-1" eventType="valueChanged" id="OzM-75-KY9"/>
                     </connections>
                 </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-tI-7Q3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-tI-7Q3">
                     <rect key="frame" x="0.0" y="90" width="320" height="478"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cM2-tI-7Q3" secondAttribute="trailing" id="6R5-Id-U7f"/>
+                <constraint firstItem="cM2-tI-7Q3" firstAttribute="top" secondItem="DFi-Rq-6WH" secondAttribute="bottom" constant="2" id="9RO-5B-IKz"/>
+                <constraint firstAttribute="trailing" secondItem="DFi-Rq-6WH" secondAttribute="trailing" id="Ee7-EU-0fw"/>
+                <constraint firstItem="DFi-Rq-6WH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JeK-Ka-hdm"/>
+                <constraint firstAttribute="bottom" secondItem="cM2-tI-7Q3" secondAttribute="bottom" id="Tsf-eI-Kfh"/>
+                <constraint firstItem="YbR-d2-BGq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WPX-Od-YId"/>
+                <constraint firstItem="cM2-tI-7Q3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="glJ-Ky-Qte"/>
+                <constraint firstItem="YbR-d2-BGq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nE3-QG-ooU"/>
+                <constraint firstItem="DFi-Rq-6WH" firstAttribute="top" secondItem="YbR-d2-BGq" secondAttribute="bottom" id="njJ-fm-M0a"/>
+                <constraint firstAttribute="trailing" secondItem="YbR-d2-BGq" secondAttribute="trailing" id="ric-EW-eqm"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="102" y="156"/>
         </view>

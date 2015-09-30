@@ -15,6 +15,7 @@
 #import "SectionCell.h"
 #import "MessageCenter.h"
 #import <UIImageView+AFNetworking.h>
+#import "SongClass.h"
 @implementation InitView
 {
     UICollectionView *_collectionView;
@@ -163,25 +164,25 @@
 {
     switch (indexPath.section) {
         case 0:
-            return CGSizeMake(320, 140);
+            return CGSizeMake(Screen_Width, Screen_Width/2.5);
             break;
         case 1:
-            return CGSizeMake(320, 40);
+            return CGSizeMake(Screen_Width, 40);
             break;
 
         case 2:
-            return CGSizeMake(140, 175) ;
+            return CGSizeMake((Screen_Width-40)/2.0, (Screen_Width-40)*17.0/28.0) ;
             break;
         case 3:
-            return CGSizeMake(320, 40);
+            return CGSizeMake(Screen_Width, 40);
             break;
 
         case 4:
-            return CGSizeMake(140, 175);
+            return CGSizeMake((Screen_Width-40)/2.0,  (Screen_Width-40)*17.0/28.0);
             break;
             
         default:
-            return CGSizeMake(140, 175);
+            return CGSizeMake((Screen_Width-40)/2.0,  (Screen_Width-40)*17.0/28.0);
             break;
     }
 }

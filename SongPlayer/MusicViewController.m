@@ -20,6 +20,7 @@
 #import "AlbumSongsController.h"
 #import "SliderType3.h"
 #import "WebController.h"
+
 @interface MusicViewController ()<UIScrollViewDelegate>
 {
     
@@ -42,16 +43,15 @@
 - (IBAction)buttons:(id)sender {
     UIButton *button=(UIButton *)sender;
     [UIView animateWithDuration:0.5 animations:^(){
-         [rootScrollView setContentOffset:CGPointMake(rootScrollView.frame.size.width*(button.tag-10), 0)]; 
+         [rootScrollView setContentOffset:CGPointMake(Screen_Width*(button.tag-10), 0)];
     }];
-  
-
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     rootScrollView.delegate=self;
-    rootScrollView.contentSize=CGSizeMake(self.view.bounds.size.width*4, rootScrollView.bounds.size.width);
+    rootScrollView.contentSize=CGSizeMake(Screen_Width*4, Screen_Height-100);
+    rootScrollView.showsHorizontalScrollIndicator=NO;
+    rootScrollView.showsVerticalScrollIndicator=NO;
     [self message];
     [self customUI];
     
@@ -144,19 +144,19 @@
     //scrollView的初始偏移量
     rootScrollView.contentOffset=CGPointMake(0, 0);
     //主页
-    InitView *view1=[[InitView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*0, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height) ];
+    InitView *view1=[[InitView alloc] initWithFrame:CGRectMake(Screen_Width*0, 0, Screen_Width, Screen_Height-100) ];
     view1.backgroundColor=[UIColor whiteColor];
     [rootScrollView addSubview:view1];
     //歌单
-    ListView *view2=[[ListView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*1, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+    ListView *view2=[[ListView alloc] initWithFrame:CGRectMake(Screen_Width*1, 0, Screen_Width, Screen_Height-100)];
     view2.backgroundColor=[UIColor whiteColor];
     [rootScrollView addSubview:view2];
     //榜单
-    BangdanView *view3=[[BangdanView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*2, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+    BangdanView *view3=[[BangdanView alloc] initWithFrame:CGRectMake(Screen_Width*2, 0, Screen_Width, Screen_Height-100)];
     view3.backgroundColor=[UIColor whiteColor];
     [rootScrollView addSubview:view3];
     //歌手
-    SongersView *view4=[[SongersView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*3, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+    SongersView *view4=[[SongersView alloc] initWithFrame:CGRectMake(Screen_Width*3, 0, Screen_Width, Screen_Height-100)];
     [rootScrollView addSubview:view4];
     
 }

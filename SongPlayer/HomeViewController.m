@@ -22,6 +22,7 @@
 #import "MySongListViewController.h"
 #import "LocalViewController.h"
 #import "FavoriteViewController.h"
+#import "SongClass.h"
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     
@@ -60,8 +61,9 @@
     [_tableview registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"GUCESS"];
     [_tableview reloadData];
     //可以下拉放大图片的定制
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, 200)];
+    
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 200)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, Screen_Width, 200)];
     [imageView setImage:[UIImage imageNamed:@"121.jpg"]];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight| UIViewAutoresizingFlexibleWidth;
     imageView.clipsToBounds = YES;
@@ -71,7 +73,7 @@
     [customView addSubview:imageView];
     //天气模块的定制
       _weatherView=[[[NSBundle mainBundle] loadNibNamed:@"Headview" owner:self options:nil] lastObject];
-    _weatherView.frame=CGRectMake(0, 0-_tableview.contentOffset.y-200, self.view.bounds.size.width, 200);
+    _weatherView.frame=CGRectMake(0, 0-_tableview.contentOffset.y-200, Screen_Width, 200);
     [_weatherView weatherrefresh];
     [self.view addSubview:_weatherView];
     
@@ -85,7 +87,7 @@
     [view.shoucang addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
     [view.MusicList addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
     [view.localButton addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
-    view.bounds=CGRectMake(0, 0, self.view.bounds.size.width, 80);
+    view.bounds=CGRectMake(0, 0, Screen_Width, 80);
     
     
 }
@@ -142,7 +144,7 @@
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-        _weatherView.frame=CGRectMake(0, 0-_tableview.contentOffset.y-200, self.view.bounds.size.width, 200);
+        _weatherView.frame=CGRectMake(0, 0-_tableview.contentOffset.y-200, Screen_Width, 200);
     
 }
 
@@ -165,7 +167,7 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
+    UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
     label.text=@"  猜你喜欢";
     label.backgroundColor=[UIColor whiteColor];
     label.font=[UIFont systemFontOfSize:18];

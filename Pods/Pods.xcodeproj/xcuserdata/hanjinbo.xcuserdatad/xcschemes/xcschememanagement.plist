@@ -4,45 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-FMDB.xcscheme</key>
+		<key>FMDB.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-MJRefresh.xcscheme</key>
+		<key>MJRefresh.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>72B4B245CD0C79E67E2E413D</key>
+		<key>17CC87884279A8AC5F27FB7AA3A3F96B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9F4BDA083772589B389F4473</key>
+		<key>42ED44BE87B09E2FF884F3ABEA47E1CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC049B93B1C443B93456F42A</key>
+		<key>A08CEF4E1870AF7F85219CDCEF61E9BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FFC410DBD0893EABBF037CBE</key>
+		<key>D2D40DD2492B55B306F2AD6B3722E422</key>
 		<dict>
 			<key>primary</key>
 			<true/>

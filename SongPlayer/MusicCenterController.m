@@ -22,6 +22,7 @@
 #import "MySongListViewController.h"
 #import "SongDownloadCenter.h"
 #import "SqliteCenter.h"
+#import "SongClass.h"
 @interface MusicCenterController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 {
     
@@ -116,22 +117,22 @@
 }
 -(void)customUI
 {
-    _listView=[[UITableView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*0, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+    _listView=[[UITableView alloc] initWithFrame:CGRectMake(Screen_Width*0, 0, Screen_Width, Screen_Height-171)];
     _listView.separatorStyle=UITableViewCellSeparatorStyleNone;
      [_listView registerNib:[UINib nibWithNibName:@"ListTCell" bundle:nil] forCellReuseIdentifier:@"CELLLIST"];
     _listView.backgroundColor=[UIColor clearColor];
     _listView.delegate=self;
     _listView.dataSource=self;
      [_listView reloadData];
-   _imageview=[[SongImageView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*1, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+   _imageview=[[SongImageView alloc] initWithFrame:CGRectMake(Screen_Width*1, 0, Screen_Width, Screen_Height-171)];
     [_imageview loadimage];
-    _lrcView=[[SongLrcView alloc] initWithFrame:CGRectMake(rootScrollView.bounds.size.width*2, 0, rootScrollView.bounds.size.width, rootScrollView.bounds.size.height)];
+    _lrcView=[[SongLrcView alloc] initWithFrame:CGRectMake(Screen_Width*2, 0, Screen_Width, Screen_Height-171)];
     [_lrcView getdata];
     [rootScrollView addSubview:_listView];
     [rootScrollView addSubview:_imageview];
     [rootScrollView addSubview:_lrcView];
     rootScrollView.showsHorizontalScrollIndicator=NO;
-    rootScrollView.contentSize=CGSizeMake(rootScrollView.bounds.size.width*3, rootScrollView.bounds.size.height);
+    rootScrollView.contentSize=CGSizeMake(Screen_Width*3, Screen_Height-171);
     rootScrollView.pagingEnabled=YES;
     rootScrollView.delegate=self;
    [slider setThumbImage:[UIImage imageNamed:@"sliderThumb_small.png"] forState:UIControlStateNormal];

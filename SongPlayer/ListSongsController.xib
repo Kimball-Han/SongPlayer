@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListSongsController">
@@ -18,48 +19,78 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iay-j2-a92">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iay-j2-a92">
                     <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WET-n7-QaC">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WET-n7-QaC">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euQ-sg-eQP">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euQ-sg-eQP">
                             <rect key="frame" x="15" y="26" width="31" height="26"/>
-                            <state key="normal" image="ic_recommend_back_normal@3x.png">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="UoV-PX-Hfi"/>
+                                <constraint firstAttribute="height" constant="26" id="bGM-aG-Z7l"/>
+                            </constraints>
+                            <state key="normal" image="ic_recommend_back_normal.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="popview:" destination="-1" eventType="touchUpInside" id="NuL-Sr-Opy"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4u-9W-4YB">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新歌榜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4u-9W-4YB">
                             <rect key="frame" x="58" y="31" width="204" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="204" id="Vjr-Ql-Lmc"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-KJ-yM4">
+                            <rect key="frame" x="15" y="26" width="31" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="26" id="fuw-9a-mL3"/>
+                                <constraint firstAttribute="width" constant="31" id="k9J-d2-dED"/>
+                            </constraints>
+                            <state key="normal" image="ic_recommend_back_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="popview:" destination="-1" eventType="touchUpInside" id="hMA-2h-DfW"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="A4u-9W-4YB" firstAttribute="centerX" secondItem="WET-n7-QaC" secondAttribute="centerX" id="6ie-6o-9ej"/>
+                        <constraint firstItem="euQ-sg-eQP" firstAttribute="top" secondItem="WET-n7-QaC" secondAttribute="top" constant="26" id="8Xo-sm-URr"/>
+                        <constraint firstItem="euQ-sg-eQP" firstAttribute="leading" secondItem="WET-n7-QaC" secondAttribute="leading" constant="15" id="M2r-c9-2ek"/>
+                        <constraint firstItem="jVd-KJ-yM4" firstAttribute="top" secondItem="WET-n7-QaC" secondAttribute="top" constant="26" id="ZFY-i1-fR0"/>
+                        <constraint firstAttribute="height" constant="60" id="blS-ce-nPs"/>
+                        <constraint firstItem="A4u-9W-4YB" firstAttribute="top" secondItem="WET-n7-QaC" secondAttribute="top" constant="31" id="kxo-8Z-a5L"/>
+                        <constraint firstItem="jVd-KJ-yM4" firstAttribute="leading" secondItem="WET-n7-QaC" secondAttribute="leading" constant="15" id="mBP-mY-XfU"/>
+                        <constraint firstAttribute="bottom" secondItem="jVd-KJ-yM4" secondAttribute="bottom" constant="8" id="sdp-jN-7bv"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-KJ-yM4">
-                    <rect key="frame" x="15" y="26" width="31" height="26"/>
-                    <state key="normal" image="ic_recommend_back_normal@3x.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="popview:" destination="-1" eventType="touchUpInside" id="hMA-2h-DfW"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iay-j2-a92" secondAttribute="bottom" id="OXs-SF-K52"/>
+                <constraint firstItem="WET-n7-QaC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SKL-mE-usY"/>
+                <constraint firstItem="iay-j2-a92" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aA4-mM-9UW"/>
+                <constraint firstItem="iay-j2-a92" firstAttribute="top" secondItem="WET-n7-QaC" secondAttribute="bottom" id="afM-iH-GpD"/>
+                <constraint firstAttribute="trailing" secondItem="iay-j2-a92" secondAttribute="trailing" id="iRp-bR-rXZ"/>
+                <constraint firstAttribute="trailing" secondItem="WET-n7-QaC" secondAttribute="trailing" id="msC-BC-s4U"/>
+                <constraint firstItem="WET-n7-QaC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zJs-rU-h5F"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="-40" y="12"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_recommend_back_normal@3x.png" width="78" height="78"/>
+        <image name="ic_recommend_back_normal.png" width="26" height="26"/>
     </resources>
 </document>

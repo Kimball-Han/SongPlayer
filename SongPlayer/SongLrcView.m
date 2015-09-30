@@ -18,6 +18,7 @@
     JYLrcParser *_lrcModel;
     CGPoint _point;
     NSInteger index;
+    NSInteger centerIndex;
 
 }
 
@@ -29,7 +30,7 @@
         self.backgroundColor=[UIColor clearColor];
         _tableview.delegate=self;
         _tableview.dataSource=self;
-     
+        centerIndex=frame.size.height/50;
         [self createUI];
     }
     return self;
@@ -50,7 +51,7 @@
    
     [_tableview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _tableview.backgroundColor = [UIColor clearColor];
-    _tableview.rowHeight=25.0f;
+    _tableview.rowHeight=30.0f;
     
      [PlayerCenter sharePlayerCenter].startPlay=^
         {
@@ -81,24 +82,26 @@
                 }
                 if (index==0) {
                     LrcRowCell *cell1=(LrcRowCell *)[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-                    cell1.linelrc.font=[UIFont systemFontOfSize:18];
+                    cell1.linelrc.font=[UIFont systemFontOfSize:20];
                     cell1.linelrc.textColor=[UIColor purpleColor] ;
                 }
                 
                 if (index!=j) {
                     LrcRowCell *cell=(LrcRowCell *)[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:j inSection:0]];
-                    cell.linelrc.font=[UIFont systemFontOfSize:14];
+                    cell.linelrc.font=[UIFont systemFontOfSize:16];
                     cell.linelrc.textColor=[UIColor  whiteColor];
                     
                     j=index;
                     
                     LrcRowCell *cell1=(LrcRowCell *)[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-                    cell1.linelrc.font=[UIFont systemFontOfSize:18];
+                    cell1.linelrc.font=[UIFont systemFontOfSize:20];
                   
                     cell1.linelrc.textColor=[UIColor purpleColor] ;
+                  //  cell1.linelrc.font=[UIFont fontWithName:@"American Typewrite-bold" size:20];
                     CGPoint  point=_point;
                    // if (index>7) {
-                        point.y=25.0*(index-7);
+                        point.y=25.0*(index-centerIndex);
+                    
                     //}
                     
                     [_tableview setContentOffset:point animated:YES];
@@ -136,8 +139,9 @@
     cell.linelrc.font=[UIFont systemFontOfSize:14];
     cell.linelrc.textColor=[UIColor whiteColor];
     if (indexPath.row==index) {
-        cell.linelrc.font=[UIFont systemFontOfSize:18];
+        cell.linelrc.font=[UIFont systemFontOfSize:20];
         cell.linelrc.textColor=[UIColor purpleColor] ;
+         //  cell.linelrc.font=[UIFont fontWithName:@"American Typewrite-bold" size:20];
         
     }
     if (_lrcModel.allLrcItems.count>indexPath.row) {

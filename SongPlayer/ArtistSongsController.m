@@ -50,7 +50,7 @@
     topview.alpha=0;
     _dataArr=[[NSMutableArray alloc] init];
    _view=[[[NSBundle mainBundle]loadNibNamed:@"Infoview" owner:self options:nil ] lastObject];
-    _view.frame=CGRectMake(0, 0, self.view.bounds.size.width, 200);
+    _view.frame=CGRectMake(0, 0, Screen_Width, 200);
     __weak ArtistSongsController *weakself=self;
     _view.share=^(ArtistModel *m){
         [UMSocialSnsService presentSnsIconSheetView:weakself
@@ -64,8 +64,8 @@
         [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:m.avatar_s500];
     };
     
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
-   _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 200)];
+   _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, Screen_Width, Screen_Width)];
     //[_headImg setImage:[UIImage imageNamed:@"bg.jpg"]];
     
     
@@ -73,7 +73,7 @@
     _headImg.clipsToBounds = YES;
     _headImg.contentMode = UIViewContentModeScaleAspectFill;
     _head = [CExpandHeader expandWithScrollView:table expandView:customView];
-    _view.frame=CGRectMake(0, 0-table.contentOffset.y-200, self.view.bounds.size.width, 200);
+    _view.frame=CGRectMake(0, 0-table.contentOffset.y-200, Screen_Width, 200);
     [self.view addSubview:_view];
     [customView addSubview:_headImg];
     [self.view bringSubviewToFront:backKey];
@@ -153,7 +153,7 @@
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-      _view.frame=CGRectMake(0, 0-table.contentOffset.y-200, self.view.bounds.size.width, 200);
+      _view.frame=CGRectMake(0, 0-table.contentOffset.y-200, Screen_Width, 200);
     if (scrollView.contentOffset.y>-64) {
         topview.alpha=1;
     }else {
