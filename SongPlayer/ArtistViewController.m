@@ -83,7 +83,7 @@
 -(void)getData
 {
    // NSLog(@"%@",self.cate);
-    [[HttpRequest shareRequestManager] getSongerListUrl:[NSString stringWithFormat:SongerListUrl,_offset,_area,_sex,_cate] returnData:^(id data,NSError *error){
+    [[HttpRequest shareRequestManager] getSongerListUrl:[NSString stringWithFormat:SongerListUrl,(long)_offset,_area,_sex,_cate] returnData:^(id data,NSError *error){
         if (self.offset==0) {
             [_dataArr removeAllObjects];
             if (data!=[NSNull null]) {

@@ -91,7 +91,7 @@
        cha=0;
         [PlayerCenter sharePlayerCenter].refrshMusicVC=^(int percentage, NSString *elapsedTime,NSString *timeRemaining,BOOL finished){
             if (percentage>=99) {
-                NSLog(@"下一首%ld",cha);
+                NSLog(@"下一首%ld",(long)cha);
                 if (cha==0) {
                     self.curentIndex++;
                     [self nextsong];

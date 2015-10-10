@@ -76,7 +76,7 @@
 -(void)getData
 {
     
-    [[HttpRequest shareRequestManager] getSongListUrl:[NSString stringWithFormat:SongListUrl,_page] returnData:^( id response,NSError *error){
+    [[HttpRequest shareRequestManager] getSongListUrl:[NSString stringWithFormat:SongListUrl,(long)_page] returnData:^( id response,NSError *error){
         if (_page==1) {
             [_dataArr removeAllObjects];
               [_collectionView.header endRefreshing];

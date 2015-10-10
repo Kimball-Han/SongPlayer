@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface Headview : UIView<UITextFieldDelegate>
--(void)weatherrefresh;
-
+#import <CoreLocation/CoreLocation.h>
+@interface Headview : UIView<UITextFieldDelegate,CLLocationManagerDelegate>
+-(void)startloaction;
+@property(nonatomic,strong)CLLocationManager *locationManager;
 
 @end

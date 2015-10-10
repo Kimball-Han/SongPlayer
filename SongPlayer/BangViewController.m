@@ -77,7 +77,7 @@
 }
 -(void)getdata
 {
-    [[HttpRequest shareRequestManager] getBangSongsUrl:[NSString stringWithFormat:getBangSongsListUrl ,[self.type integerValue]]returnData:^(id dic ,NSError *error){
+    [[HttpRequest shareRequestManager] getBangSongsUrl:[NSString stringWithFormat:getBangSongsListUrl ,(long)[self.type integerValue]]returnData:^(id dic ,NSError *error){
         
         NSArray *arr=dic[@"song_list"];
         if (dic[@"song_list"] !=[NSNull null]) {

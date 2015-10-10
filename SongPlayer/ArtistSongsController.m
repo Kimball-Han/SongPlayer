@@ -102,7 +102,7 @@
 }
 -(void)getSongs
 {
-    [[HttpRequest shareRequestManager] getArtistSongListUrl:[NSString stringWithFormat:ArtistSongListUrl,self.ting_uid,self.offset] returnData:^(id res,NSError *error){
+    [[HttpRequest shareRequestManager] getArtistSongListUrl:[NSString stringWithFormat:ArtistSongListUrl,self.ting_uid,(long)self.offset] returnData:^(id res,NSError *error){
         if (self.offset==0) {
             [_dataArr removeAllObjects];
             [_dataArr addObjectsFromArray:res];

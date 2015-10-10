@@ -25,13 +25,13 @@
     self.window.rootViewController=nagv;
     [UMSocialData setAppKey:@"55555d7467e58e80b9000d96"];
     [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
-      self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
- 
+    
 }
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
@@ -45,7 +45,7 @@
     return  [UMSocialSnsService handleOpenURL:url];
 }
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-  
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

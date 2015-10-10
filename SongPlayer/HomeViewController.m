@@ -74,7 +74,7 @@
     //天气模块的定制
       _weatherView=[[[NSBundle mainBundle] loadNibNamed:@"Headview" owner:self options:nil] lastObject];
     _weatherView.frame=CGRectMake(0, 0-_tableview.contentOffset.y-200, Screen_Width, 200);
-    [_weatherView weatherrefresh];
+    [_weatherView startloaction];
     [self.view addSubview:_weatherView];
     
  _tableview.showsVerticalScrollIndicator=NO;

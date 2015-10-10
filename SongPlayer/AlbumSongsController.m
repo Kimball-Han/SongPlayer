@@ -39,7 +39,7 @@
 }
 -(void)getData
 {
-    [[HttpRequest shareRequestManager] getMoreAlbumsByUrl:[NSString stringWithFormat:getMoreAlbumsUrl,self.offset] returnData:^(id response,NSError *error){
+    [[HttpRequest shareRequestManager] getMoreAlbumsByUrl:[NSString stringWithFormat:getMoreAlbumsUrl,(long)self.offset] returnData:^(id response,NSError *error){
         if (self.offset==0) {
             [_dataArr removeAllObjects];
             [_dataArr addObjectsFromArray:response];

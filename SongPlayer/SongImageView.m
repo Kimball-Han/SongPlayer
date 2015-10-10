@@ -71,8 +71,8 @@
     }
 }
 -(void)loadimage
-{   PlayerCenter *ce= [PlayerCenter sharePlayerCenter];
-    
+{
+    PlayerCenter *ce= [PlayerCenter sharePlayerCenter];
     _label.text=[NSString stringWithFormat:@"%@-%@",ce.m.name,ce.m.author];
     [_image setImageWithURL:[NSURL URLWithString:ce.m.imgUrl]placeholderImage:[UIImage imageNamed:@"35.jpg"]];
     self.image11.image=_image.image;
