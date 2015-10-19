@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D53DED81BBBB66F006CBB54 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D53DED71BBBB66F006CBB54 /* CoreLocation.framework */; };
+		1DE273F71BCE2530000E6B41 /* guide_bg_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F31BCE2530000E6B41 /* guide_bg_0@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1DE273F81BCE2530000E6B41 /* guide_bg_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F41BCE2530000E6B41 /* guide_bg_1@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1DE273F91BCE2530000E6B41 /* guide_bg_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F51BCE2530000E6B41 /* guide_bg_2@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1DE273FA1BCE2530000E6B41 /* guide_bg_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F61BCE2530000E6B41 /* guide_bg_3@2x.png */; settings = {ASSET_TAGS = (); }; };
 		33A9301D1B0DCAEF00FA37DF /* bt_list_more_down02_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930001B0DCAEF00FA37DF /* bt_list_more_down02_normal@2x.png */; };
 		33A9301E1B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930011B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png */; };
 		33A9301F1B0DCAEF00FA37DF /* bt_list_more_down02_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930021B0DCAEF00FA37DF /* bt_list_more_down02_press@2x.png */; };
@@ -249,6 +253,10 @@
 
 /* Begin PBXFileReference section */
 		1D53DED71BBBB66F006CBB54 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1DE273F31BCE2530000E6B41 /* guide_bg_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_bg_0@2x.png"; sourceTree = "<group>"; };
+		1DE273F41BCE2530000E6B41 /* guide_bg_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_bg_1@2x.png"; sourceTree = "<group>"; };
+		1DE273F51BCE2530000E6B41 /* guide_bg_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_bg_2@2x.png"; sourceTree = "<group>"; };
+		1DE273F61BCE2530000E6B41 /* guide_bg_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_bg_3@2x.png"; sourceTree = "<group>"; };
 		33A930001B0DCAEF00FA37DF /* bt_list_more_down02_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_list_more_down02_normal@2x.png"; sourceTree = "<group>"; };
 		33A930011B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_list_more_down02_normal@3x.png"; sourceTree = "<group>"; };
 		33A930021B0DCAEF00FA37DF /* bt_list_more_down02_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_list_more_down02_press@2x.png"; sourceTree = "<group>"; };
@@ -1013,6 +1021,10 @@
 		C5DDDDC11AE2037300E24BC3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1DE273F31BCE2530000E6B41 /* guide_bg_0@2x.png */,
+				1DE273F41BCE2530000E6B41 /* guide_bg_1@2x.png */,
+				1DE273F51BCE2530000E6B41 /* guide_bg_2@2x.png */,
+				1DE273F61BCE2530000E6B41 /* guide_bg_3@2x.png */,
 				33A92FF91B0DCAEF00FA37DF /* 图 */,
 				C519234C1AEDCA5400640E53 /* 121.jpg */,
 				C525F0411AE7E0CB00E7E56F /* bt_playpagen_control_play_button_press@3x.png */,
@@ -1329,6 +1341,7 @@
 				33B143971B0B550900D55465 /* UMSnsAccountViewController.xib in Resources */,
 				C5301EE81AE613CF009C403D /* list_btn_greyearth@2x.png in Resources */,
 				33A9302A1B0DCAEF00FA37DF /* ic_playlist_mtv@3x.png in Resources */,
+				1DE273F81BCE2530000E6B41 /* guide_bg_1@2x.png in Resources */,
 				C5DDDE281AE2748800E24BC3 /* no_more_ic@2x.png in Resources */,
 				C5A2131F1AE9144900AA3241 /* AlbumSongsController.xib in Resources */,
 				C525F02E1AE7AB0300E7E56F /* bg_listen-knowledge_nocover_bg@2x.png in Resources */,
@@ -1341,6 +1354,7 @@
 				C5301F301AE63551009C403D /* bt_playlist_collection_press@2x.png in Resources */,
 				C525F03C1AE7D1D500E7E56F /* soundSlider.png in Resources */,
 				33A930271B0DCAEF00FA37DF /* bt_list_more_remove_press@2x.png in Resources */,
+				1DE273F71BCE2530000E6B41 /* guide_bg_0@2x.png in Resources */,
 				C5301F441AE63551009C403D /* bt_playlistdetails_share_press@2x.png in Resources */,
 				C5DDDE011AE23C9400E24BC3 /* MusicViewController.xib in Resources */,
 				C5143ABD1AE4A3AB0076E593 /* ic_recommend_back_press@3x.png in Resources */,
@@ -1369,6 +1383,7 @@
 				33B143961B0B550900D55465 /* UMSLoginViewController.xib in Resources */,
 				C5301F361AE63551009C403D /* bt_playlist_more_normal@2x.png in Resources */,
 				C5DDDDE91AE2229000E24BC3 /* bt_list_more_cd_normal@2x.png in Resources */,
+				1DE273FA1BCE2530000E6B41 /* guide_bg_3@2x.png in Resources */,
 				C51923571AEDEF3400640E53 /* WebController.xib in Resources */,
 				C5301F2A1AE63551009C403D /* bt_playlist_choice_normal@2x.png in Resources */,
 				33A9301E1B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png in Resources */,
@@ -1409,6 +1424,7 @@
 				C5DDDE121AE2517F00E24BC3 /* file_tital_back_but@2x.png in Resources */,
 				C5301F3E1AE63551009C403D /* bt_playlist_play_press@2x.png in Resources */,
 				C5301F5B1AE66C35009C403D /* LrcRowCell.xib in Resources */,
+				1DE273F91BCE2530000E6B41 /* guide_bg_2@2x.png in Resources */,
 				C5301F2D1AE63551009C403D /* bt_playlist_choice_press@3x.png in Resources */,
 				33A930301B0DCAEF00FA37DF /* player_menu_icon_download_select@2x.png in Resources */,
 				C5DDDDED1AE2229000E24BC3 /* bt_list_more_collection_choice@2x.png in Resources */,

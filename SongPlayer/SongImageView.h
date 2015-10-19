@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^callBack)(UIButton *sender);
+typedef void(^callBack)(id dat);
 @interface SongImageView : UIView
 @property(nonatomic,weak)UIImageView *image11;
 
 @property(nonatomic,copy)callBack buttonClick;
+@property(nonatomic,copy)callBack imageBack;
 -(void)loadimage;
 @end

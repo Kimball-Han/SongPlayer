@@ -22,8 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bt_mymusic_time_bg_night.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-eu-RZ6">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_bg_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-eu-RZ6">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-xg-wPc">
                     <rect key="frame" x="0.0" y="60" width="320" height="397"/>
@@ -192,12 +193,12 @@
         </view>
     </objects>
     <resources>
-        <image name="bt_mymusic_time_bg_night.jpg" width="414" height="736"/>
         <image name="bt_playlist_choice_press.png" width="24" height="24"/>
         <image name="bt_playlistdetails_share_press.png" width="24" height="24"/>
         <image name="bt_playpagen_control_eq_normal.png" width="26" height="26"/>
         <image name="bt_playpagen_control_next_normal.png" width="26" height="26"/>
         <image name="bt_playpagen_control_order_normal.png" width="26" height="26"/>
         <image name="bt_playpagen_control_previous_normal.png" width="26" height="26"/>
+        <image name="guide_bg_0.png" width="320" height="568"/>
     </resources>
 </document>

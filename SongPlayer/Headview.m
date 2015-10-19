@@ -71,15 +71,17 @@
         // 描述地名的类
         CLPlacemark * placemark = placemarks[0];
         // NSLog(@">>%@ ,%@",placemark.name,placemark.subLocality);
-        if (placemark.subLocality) {
+     
             [self weatherrefresh:placemark.subLocality];
-        }else{
-            [self weatherrefresh:@"北京市"];
-        }
+       
         
         
     }];
     
+}
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [self weatherrefresh:@"上海市"];
 }
 //天气模块的数据请求和刷新
 -(void)weatherrefresh:(NSString *)city

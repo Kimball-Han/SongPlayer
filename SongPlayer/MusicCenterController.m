@@ -56,7 +56,7 @@
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,nil]
                                        delegate:(id)self];
     
-   //分享附加图片
+    //分享附加图片
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:[PlayerCenter sharePlayerCenter].m.imgUrl];
 }
 //实现回调方法（可选）：
@@ -88,7 +88,7 @@
 {
     self = [super init];
     if (self) {
-       cha=0;
+        cha=0;
         [PlayerCenter sharePlayerCenter].refrshMusicVC=^(int percentage, NSString *elapsedTime,NSString *timeRemaining,BOOL finished){
             if (percentage>=99) {
                 NSLog(@"下一首%ld",(long)cha);
@@ -110,21 +110,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     [self customUI];
-     [self downAndfa];
+    [self customUI];
+    [self downAndfa];
     
-   
+    
 }
 -(void)customUI
 {
     _listView=[[UITableView alloc] initWithFrame:CGRectMake(Screen_Width*0, 0, Screen_Width, Screen_Height-171)];
     _listView.separatorStyle=UITableViewCellSeparatorStyleNone;
-     [_listView registerNib:[UINib nibWithNibName:@"ListTCell" bundle:nil] forCellReuseIdentifier:@"CELLLIST"];
+    [_listView registerNib:[UINib nibWithNibName:@"ListTCell" bundle:nil] forCellReuseIdentifier:@"CELLLIST"];
     _listView.backgroundColor=[UIColor clearColor];
     _listView.delegate=self;
     _listView.dataSource=self;
-     [_listView reloadData];
-   _imageview=[[SongImageView alloc] initWithFrame:CGRectMake(Screen_Width*1, 0, Screen_Width, Screen_Height-171)];
+    [_listView reloadData];
+    _imageview=[[SongImageView alloc] initWithFrame:CGRectMake(Screen_Width*1, 0, Screen_Width, Screen_Height-171)];
     [_imageview loadimage];
     _lrcView=[[SongLrcView alloc] initWithFrame:CGRectMake(Screen_Width*2, 0, Screen_Width, Screen_Height-171)];
     [_lrcView getdata];
@@ -135,8 +135,8 @@
     rootScrollView.contentSize=CGSizeMake(Screen_Width*3, Screen_Height-171);
     rootScrollView.pagingEnabled=YES;
     rootScrollView.delegate=self;
-   [slider setThumbImage:[UIImage imageNamed:@"sliderThumb_small.png"] forState:UIControlStateNormal];
-  [slider setThumbImage:[UIImage imageNamed:@"sliderThumb_small.png"] forState:UIControlStateHighlighted];
+    [slider setThumbImage:[UIImage imageNamed:@"sliderThumb_small.png"] forState:UIControlStateNormal];
+    [slider setThumbImage:[UIImage imageNamed:@"sliderThumb_small.png"] forState:UIControlStateHighlighted];
     [playbutton setImage:[UIImage imageNamed:@"bt_playpagen_control_pause_button_normal@3x"] forState:UIControlStateSelected];
     [playbutton setImage:[UIImage imageNamed:@"bt_playpagen_control_play_button_normal@3x"] forState:UIControlStateNormal];
     [playbutton setImage:[UIImage imageNamed:@"bt_playpagen_control_play_button_press@3x"] forState:UIControlStateHighlighted];
@@ -150,6 +150,22 @@
     _imageview.buttonClick=^(UIButton *sender){
         [weakself more:sender];
     };
+    __weak UIImageView *weakimage=bgImage;
+    _imageview.imageBack=^(UIImage *image1)
+    {
+        CIContext *context = [CIContext contextWithOptions:nil];
+        CIImage *inputImage = [[CIImage alloc] initWithImage:image1];
+        // create gaussian blur filter
+        CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+        [filter setValue:inputImage forKey:kCIInputImageKey];
+        [filter setValue:[NSNumber numberWithFloat:10.0] forKey:@"inputRadius"];
+        // blur image
+        CIImage *result = [filter valueForKey:kCIOutputImageKey];
+        CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
+        UIImage *image = [UIImage imageWithCGImage:cgImage];
+        CGImageRelease(cgImage);
+       weakimage.image = image;
+    };
     
 }
 
@@ -160,7 +176,7 @@
     [_listView reloadData];
 }
 - (IBAction)nextstem:(id)sender {
-     _curentIndex++;
+    _curentIndex++;
     [self nextsong];
 }
 - (IBAction)playAndpause:(id)sender {
@@ -169,17 +185,17 @@
     
     if (button.selected) {
         [[PlayerCenter sharePlayerCenter] play];
-      [button setImage:[UIImage imageNamed:@"bt_playpagen_control_pause_button_press@3x"] forState:UIControlStateHighlighted];
+        [button setImage:[UIImage imageNamed:@"bt_playpagen_control_pause_button_press@3x"] forState:UIControlStateHighlighted];
     }else{
-         [[PlayerCenter sharePlayerCenter] pause];
-      [button setImage:[UIImage imageNamed:@"bt_playpagen_control_play_button_press@3x"] forState:UIControlStateHighlighted];
+        [[PlayerCenter sharePlayerCenter] pause];
+        [button setImage:[UIImage imageNamed:@"bt_playpagen_control_play_button_press@3x"] forState:UIControlStateHighlighted];
     }
 }
 - (IBAction)shangyishou:(id)sender {
     if (_curentIndex==0) {
         _curentIndex=_dataArr.count-(_dataArr.count!=0);
     }else{
-     _curentIndex--;
+        _curentIndex--;
     }
     [self nextsong];
 }
@@ -192,19 +208,19 @@
 -(void)more:(UIButton *)sender;
 {
     switch (sender.tag) {
-        //下载
+            //下载
         case 10:
         {
             [self downloadsong];
         }
             break;
-       //mv
+            //mv
         case 11:
         {
             [self playMv];
         }
             break;
-        //
+            //
         case 12:
         {
             if (![PlayerCenter sharePlayerCenter].m.islocal) {
@@ -225,10 +241,10 @@
     LocalViewController *center=[LocalViewController DownloadCenter];
     [center.dataArr addObject:songM];
     if (!model.isLocal) {
-         UIActionSheet *acs=[[UIActionSheet alloc] initWithTitle:@"已加入下载列表" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"查看下载列表" otherButtonTitles: nil];
-    [acs showInView:self.view];
+        UIActionSheet *acs=[[UIActionSheet alloc] initWithTitle:@"已加入下载列表" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"查看下载列表" otherButtonTitles: nil];
+        [acs showInView:self.view];
     }
-   
+    
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -239,8 +255,8 @@
             
         }];
     }
-   
-
+    
+    
 }
 //播放MV
 -(void)playMv
@@ -251,20 +267,20 @@
         //MV链接获取成功播放；视频
         if(str){
             [[PlayerCenter sharePlayerCenter] pause];
-        NSURL *url = [NSURL URLWithString:str];
-        //这里应该是MPMoviePlayerViewController,而不是MPMoviePlayerController
-        MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc]init];
+            NSURL *url = [NSURL URLWithString:str];
+            //这里应该是MPMoviePlayerViewController,而不是MPMoviePlayerController
+            MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc]init];
             //横屏
-        playerController.view.transform=CGAffineTransformMakeRotation( M_PI * 90.0 / 180.0);
-         playerController.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
+            playerController.view.transform=CGAffineTransformMakeRotation( M_PI * 90.0 / 180.0);
+            playerController.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
             [playerController.moviePlayer setContentURL:url];
             playerController.moviePlayer.allowsAirPlay=YES;
             [playerController.moviePlayer prepareToPlay];
-           [playerController.moviePlayer.view setFrame:CGRectMake(0, 0, 320, 480)];
+            [playerController.moviePlayer.view setFrame:CGRectMake(0, 0, 320, 480)];
             //进入播放界面
             [self presentViewController:playerController animated:YES completion:nil];
-        //在通知中心注册视频播放结束时的事件处理函数
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onPlayFinished) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+            //在通知中心注册视频播放结束时的事件处理函数
+            [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onPlayFinished) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
         }
     }];
 }
@@ -277,13 +293,13 @@
 
 
 - (void)sshuaxin{
-  int sencd=  ([[_leftTimelb.text substringToIndex:2] integerValue]*60+[[_leftTimelb.text substringFromIndex:3] integerValue]+[[rightTimeLb.text substringToIndex:2] integerValue]*60+[[rightTimeLb.text substringFromIndex:3] integerValue])*((float)slider.value/100.0);
+    int sencd=  ([[_leftTimelb.text substringToIndex:2] integerValue]*60+[[_leftTimelb.text substringFromIndex:3] integerValue]+[[rightTimeLb.text substringToIndex:2] integerValue]*60+[[rightTimeLb.text substringFromIndex:3] integerValue])*((float)slider.value/100.0);
     [[PlayerCenter sharePlayerCenter] moveToSecond:sencd];
 }
 
 -(void)nextsong
 {
-   
+    
     if (_curentIndex>=_dataArr.count) {
         _curentIndex=0;
     }
@@ -296,27 +312,27 @@
     if ([_dataArr[_curentIndex] isKindOfClass:[playeSongMoel class]]) {
         [PlayerCenter sharePlayerCenter].m=_dataArr[_curentIndex];
     }else{
-    SongModel *m=_dataArr[_curentIndex];
-    if (m.isLocal) {
-        playeSongMoel *model=[[playeSongMoel alloc] init];
-        model.name=m.titlestr;
-        model.author=m.author;
-        model.islocal=YES;
-        [PlayerCenter sharePlayerCenter].m=model;
-    }else{
-         [playerThread cancel];
-    playerThread=[[NSThread alloc] initWithTarget:self selector:@selector(getlinkUrlAndPlayer:) object:m.song_id];
-    [playerThread start];
+        SongModel *m=_dataArr[_curentIndex];
+        if (m.isLocal) {
+            playeSongMoel *model=[[playeSongMoel alloc] init];
+            model.name=m.titlestr;
+            model.author=m.author;
+            model.islocal=YES;
+            [PlayerCenter sharePlayerCenter].m=model;
+        }else{
+            [playerThread cancel];
+            playerThread=[[NSThread alloc] initWithTarget:self selector:@selector(getlinkUrlAndPlayer:) object:m.song_id];
+            [playerThread start];
+        }
     }
-    }
-   
+    
 }
 
 
 -(void)getlinkUrlAndPlayer:(NSString *)songid
 {
-        [[HttpRequest shareRequestManager] getSOngLinkInfoUrl:[NSString stringWithFormat:getSongLinkUrl,songid] returnData:^(id response,NSError *error){
-        }];
+    [[HttpRequest shareRequestManager] getSOngLinkInfoUrl:[NSString stringWithFormat:getSongLinkUrl,songid] returnData:^(id response,NSError *error){
+    }];
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -338,12 +354,12 @@
 {
     ListTCell *cell=[tableView dequeueReusableCellWithIdentifier:@"CELLLIST"];
     if ([_dataArr[_curentIndex] isKindOfClass:[SongModel class]]) {
-         SongModel *m=_dataArr[indexPath.row];
-    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    cell.backgroundColor=[UIColor clearColor];
-    cell.songLb.textColor=[UIColor whiteColor];
-    cell.songLb.text=m.titlestr;
-    cell.author.text=m.author;
+        SongModel *m=_dataArr[indexPath.row];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.backgroundColor=[UIColor clearColor];
+        cell.songLb.textColor=[UIColor whiteColor];
+        cell.songLb.text=m.titlestr;
+        cell.author.text=m.author;
     }else{
         playeSongMoel *m=_dataArr[indexPath.row];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -352,7 +368,7 @@
         cell.songLb.text=m.name;
         cell.author.text=m.author;
     }
-       return cell;
+    return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -362,17 +378,17 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44;
-
+    
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
