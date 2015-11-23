@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D53DED81BBBB66F006CBB54 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D53DED71BBBB66F006CBB54 /* CoreLocation.framework */; };
-		1DE273F71BCE2530000E6B41 /* guide_bg_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F31BCE2530000E6B41 /* guide_bg_0@2x.png */; settings = {ASSET_TAGS = (); }; };
-		1DE273F81BCE2530000E6B41 /* guide_bg_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F41BCE2530000E6B41 /* guide_bg_1@2x.png */; settings = {ASSET_TAGS = (); }; };
-		1DE273F91BCE2530000E6B41 /* guide_bg_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F51BCE2530000E6B41 /* guide_bg_2@2x.png */; settings = {ASSET_TAGS = (); }; };
-		1DE273FA1BCE2530000E6B41 /* guide_bg_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F61BCE2530000E6B41 /* guide_bg_3@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1DE273F71BCE2530000E6B41 /* guide_bg_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F31BCE2530000E6B41 /* guide_bg_0@2x.png */; };
+		1DE273F81BCE2530000E6B41 /* guide_bg_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F41BCE2530000E6B41 /* guide_bg_1@2x.png */; };
+		1DE273F91BCE2530000E6B41 /* guide_bg_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F51BCE2530000E6B41 /* guide_bg_2@2x.png */; };
+		1DE273FA1BCE2530000E6B41 /* guide_bg_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE273F61BCE2530000E6B41 /* guide_bg_3@2x.png */; };
 		33A9301D1B0DCAEF00FA37DF /* bt_list_more_down02_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930001B0DCAEF00FA37DF /* bt_list_more_down02_normal@2x.png */; };
 		33A9301E1B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930011B0DCAEF00FA37DF /* bt_list_more_down02_normal@3x.png */; };
 		33A9301F1B0DCAEF00FA37DF /* bt_list_more_down02_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A930021B0DCAEF00FA37DF /* bt_list_more_down02_press@2x.png */; };
@@ -1631,8 +1631,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1653,6 +1653,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "031d023e-7307-435a-bbfa-cabbc256f519";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1674,8 +1675,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1688,6 +1689,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "031d023e-7307-435a-bbfa-cabbc256f519";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1698,7 +1700,7 @@
 			baseConfigurationReference = A9CDA87A4E95193938531383 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SongPlayer/Info.plist;
@@ -1711,7 +1713,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.SongPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "031d023e-7307-435a-bbfa-cabbc256f519";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1721,7 +1723,7 @@
 			baseConfigurationReference = BE31F12D06DE893C8C3AF366 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 金波 韩 (PJ59HHYG5S)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SongPlayer/Info.plist;
@@ -1734,7 +1736,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.SongPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "031d023e-7307-435a-bbfa-cabbc256f519";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

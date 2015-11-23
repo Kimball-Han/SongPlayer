@@ -331,9 +331,16 @@
 
 -(void)getlinkUrlAndPlayer:(NSString *)songid
 {
-    [[HttpRequest shareRequestManager] getSOngLinkInfoUrl:[NSString stringWithFormat:getSongLinkUrl,songid] returnData:^(id response,NSError *error){
+    [[HttpRequest shareRequestManager] getSOngLinkInfoUrl:[NSString stringWithFormat:getSongLinkUrl,[self getTimestamp],songid,e] returnData:^(id response,NSError *error){
     }];
 }
+-(NSString *)getTimestamp
+{
+    NSDate *datenow=[NSDate date];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+    return timeSp;
+}
+
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     page.currentPage=scrollView.contentOffset.x/scrollView.bounds.size.width;

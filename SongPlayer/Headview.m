@@ -73,9 +73,7 @@
         // NSLog(@">>%@ ,%@",placemark.name,placemark.subLocality);
      
             [self weatherrefresh:placemark.subLocality];
-       
-        
-        
+
     }];
     
 }

@@ -321,18 +321,19 @@
 -(void)getSOngLinkInfoUrl:(NSString *)strUrl returnData:(suc)resopse
 {
     //NSLog(@"%@",strUrl);
-    [_manager GET:strUrl parameters:self success:^(AFHTTPRequestOperation *opreation,id response){
+    [_manager GET:strUrl parameters:nil success:^(AFHTTPRequestOperation *opreation,id response){
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
-        NSDictionary *subDic=dic[@"bitrate"];
-        if (dic[@"bitrate"] !=[NSNull null]) {
+        NSDictionary *subDic=dic[@"songurl"];
+        if (dic[@"songurl"] !=[NSNull null]) {
            
             playeSongMoel *m=[[playeSongMoel alloc] init];
             m.islocal=NO;
             m.author=dic[@"songinfo"][@"author"];
             m.name=dic[@"songinfo"][@"title"];
-            m.NetLinkUrl=subDic[@"file_link"];
+            m.NetLinkUrl=subDic[@"url"][0][@"show_link"];
+            
             m.lrclink=dic[@"songinfo"][@"lrclink"];
-            m.imgUrl=dic[@"songinfo"][@"pic_huge"];
+            m.imgUrl=dic[@"songinfo"][@"artist_500_500"];
             m.des=[NSString stringWithFormat:@"%@-%@ ",m.name,m.author];
             dispatch_queue_t main=dispatch_get_main_queue();
             dispatch_async(main, ^{
