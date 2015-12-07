@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,19 +18,22 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门歌手" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkn-BF-kkf">
                         <rect key="frame" x="17" y="15" width="179" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="179" id="NbQ-13-H7S"/>
                             <constraint firstAttribute="width" secondItem="Lkn-BF-kkf" secondAttribute="height" multiplier="179:21" id="cBB-Wd-3bC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-dl-xYJ">
                         <rect key="frame" x="10" y="53" width="300" height="130"/>
+                        <animations/>
                     </scrollView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-1e-G6I">
                         <rect key="frame" x="129" y="179" width="63" height="37"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="63" id="Gxi-b2-VDu"/>
                         </constraints>
@@ -38,6 +41,7 @@
                         <color key="currentPageIndicatorTintColor" red="0.33827554739999999" green="0.74318544710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </pageControl>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="oqL-dl-xYJ" secondAttribute="bottom" constant="26" id="2c7-go-b12"/>
                     <constraint firstAttribute="trailing" secondItem="oqL-dl-xYJ" secondAttribute="trailing" constant="10" id="Fyy-la-OxS"/>
@@ -49,6 +53,7 @@
                     <constraint firstItem="oqL-dl-xYJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xje-VC-IwC"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="_scrollView" destination="oqL-dl-xYJ" id="vhk-gr-Vw7"/>
                 <outlet property="pagect" destination="Vqe-1e-G6I" id="9pa-iM-Y31"/>
