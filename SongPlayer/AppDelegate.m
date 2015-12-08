@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-#import "UMSocial.h"
-#import "UMSocialWechatHandler.h"
-
+//#import <UMSocial.h>
+//#import "UMSocialWechatHandler.h"
+#import "MusicCenterController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,27 +23,46 @@
     // Override point for customization after application launch.
     UINavigationController *nagv=[[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     self.window.rootViewController=nagv;
-    [UMSocialData setAppKey:@"55555d7467e58e80b9000d96"];
-    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
+    nagv.navigationBarHidden=YES;
+   UIImageView * view1=[[UIImageView alloc] initWithFrame:CGRectMake(12, Screen_Height-58, 50, 50)];
+    
+    view1.userInteractionEnabled=YES;
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onclick)];
+    [view1 addGestureRecognizer:tap];
+    [nagv.view addSubview:view1];
+    view1.backgroundColor=[UIColor brownColor];
+    view1.clipsToBounds=YES;
+    view1.layer.cornerRadius=25;
+    
+    
+//    [UMSocialData setAppKey:@"55555d7467e58e80b9000d96"];
+//    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
+-(void)onclick
+{
+    MusicCenterController *  center=[MusicCenterController CenterController];
+    [self.window.rootViewController presentViewController:center animated:YES completion:^{
+        
+    }];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     
 }
--(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    return  [UMSocialSnsService handleOpenURL:url];
-}
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    return  [UMSocialSnsService handleOpenURL:url];
-}
+//-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+//{
+//    return  [UMSocialSnsService handleOpenURL:url];
+//}
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    return  [UMSocialSnsService handleOpenURL:url];
+//}
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
 }

@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.5.3):
-    - AFNetworking/NSURLConnection (= 2.5.3)
-    - AFNetworking/NSURLSession (= 2.5.3)
-    - AFNetworking/Reachability (= 2.5.3)
-    - AFNetworking/Security (= 2.5.3)
-    - AFNetworking/Serialization (= 2.5.3)
-    - AFNetworking/UIKit (= 2.5.3)
-  - AFNetworking/NSURLConnection (2.5.3):
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.3):
+  - AFNetworking/NSURLSession (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.3)
-  - AFNetworking/Security (2.5.3)
-  - AFNetworking/Serialization (2.5.3)
-  - AFNetworking/UIKit (2.5.3):
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FMDB (2.5):
@@ -25,7 +25,7 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - MJRefresh (1.4.5)
+  - MJRefresh (3.0.7)
 
 DEPENDENCIES:
   - AFNetworking
@@ -33,8 +33,8 @@ DEPENDENCIES:
   - MJRefresh
 
 SPEC CHECKSUMS:
-  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152
+  MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

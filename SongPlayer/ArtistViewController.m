@@ -64,21 +64,26 @@
 -(void)addrefresh
 {
     dispatch_queue_t main=dispatch_get_main_queue();
-    
-    [_tabeview addLegendHeaderWithRefreshingBlock:^{
+    _tabeview.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.offset=0;
         dispatch_async(main, ^{
             [self getData];
         });
     }];
-    [_tabeview.header beginRefreshing];
-    [_tabeview addLegendFooterWithRefreshingBlock:^{
+   // [_tabeview addLegendHeaderWithRefreshingBlock:^{
+    
+   // }];
+    [_tabeview.mj_header beginRefreshing];
+    _tabeview.mj_footer=[MJRefreshAutoFooter footerWithRefreshingBlock:^{
         self.offset+=50;
         dispatch_async(main, ^{
             [self getData];
         });
-       
     }];
+    //[_tabeview addLegendFooterWithRefreshingBlock:^{
+    
+       
+   // }];
 }
 -(void)getData
 {
@@ -91,13 +96,13 @@
             }
             
            
-            [_tabeview.header endRefreshing];
+            [_tabeview.mj_header endRefreshing];
         }else{
             if (data!=[NSNull null]) {
                 [_dataArr addObjectsFromArray:data];
             }
 
-            [_tabeview.footer endRefreshing];
+            [_tabeview.mj_footer endRefreshing];
         }
         [_tabeview reloadData];
     }];

@@ -17,7 +17,7 @@
 #import "Infoview.h"
 #import "MusicCenterController.h"
 #import "CExpandHeader.h"
-#import "UMSocial.h"
+
 @interface ArtistSongsController ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *nameLb;
@@ -51,18 +51,18 @@
     _dataArr=[[NSMutableArray alloc] init];
    _view=[[[NSBundle mainBundle]loadNibNamed:@"Infoview" owner:self options:nil ] lastObject];
     _view.frame=CGRectMake(0, 0, Screen_Width, 200);
-    __weak ArtistSongsController *weakself=self;
-    _view.share=^(ArtistModel *m){
-        [UMSocialSnsService presentSnsIconSheetView:weakself
-                                             appKey:@"55555d7467e58e80b9000d96"
-                                          shareText:m.intro
-                                         shareImage:[UIImage imageNamed:@"35.jpg"]
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,nil]
-                                           delegate:(id)weakself];
-        
-        
-        [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:m.avatar_s500];
-    };
+//    __weak ArtistSongsController *weakself=self;
+//    _view.share=^(ArtistModel *m){
+//        [UMSocialSnsService presentSnsIconSheetView:weakself.navigationController
+//                                             appKey:@"55555d7467e58e80b9000d96"
+//                                          shareText:m.intro
+//                                         shareImage:[UIImage imageNamed:@"35.jpg"]
+//                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,nil]
+//                                           delegate:(id)weakself];
+//        
+//        
+//        [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:m.avatar_s500];
+//    };
     
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 200)];
    _headImg = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, Screen_Width, Screen_Width)];
@@ -85,10 +85,11 @@
         self.offset=0;
         [self getinfo];
         [self getSongs];
-    [table addLegendFooterWithRefreshingBlock:^{
+    table.mj_footer=[MJRefreshAutoFooter footerWithRefreshingBlock:^{
         self.offset+=50;
         [self getSongs];
     }];
+
 }
 -(void)getinfo
 {
@@ -106,10 +107,10 @@
         if (self.offset==0) {
             [_dataArr removeAllObjects];
             [_dataArr addObjectsFromArray:res];
-            [table.header endRefreshing];
+            [table.mj_header endRefreshing];
         }else{
              [_dataArr addObjectsFromArray:res];
-            [table.footer endRefreshing];
+            [table.mj_footer endRefreshing];
         }
         [table reloadData];
 }];

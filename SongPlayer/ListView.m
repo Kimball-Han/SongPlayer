@@ -57,21 +57,26 @@
 -(void)refreshUI
 {
     __weak ListView* weakSelf=self;
-    [_collectionView addLegendHeaderWithRefreshingBlock:^{
-    
+    _collectionView.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page=1;
         [weakSelf getData];
-    
     }];
-    [_collectionView.header beginRefreshing];
-    
-    [_collectionView addLegendFooterWithRefreshingBlock:^{
+//    [_collectionView addLegendHeaderWithRefreshingBlock:^{
+//    
+//       
+//    
+//    }];
+    [_collectionView.mj_header beginRefreshing];
+    _collectionView.mj_footer=[MJRefreshAutoFooter footerWithRefreshingBlock:^{
         weakSelf.page++;
-       [weakSelf getData];
-        
+        [weakSelf getData];
     }];
+   // [_collectionView addLegendFooterWithRefreshingBlock:^{
+    
+        
+   // }];
     //[_collectionView.footer beginRefreshing];
-    _collectionView.footer.hidden = YES;
+    _collectionView.mj_footer.hidden = YES;
 }
 -(void)getData
 {
@@ -79,11 +84,11 @@
     [[HttpRequest shareRequestManager] getSongListUrl:[NSString stringWithFormat:SongListUrl,(long)_page] returnData:^( id response,NSError *error){
         if (_page==1) {
             [_dataArr removeAllObjects];
-              [_collectionView.header endRefreshing];
+              [_collectionView.mj_header endRefreshing];
         }else{
            
            
-            [_collectionView.footer endRefreshing ];
+            [_collectionView.mj_footer endRefreshing ];
         }
         
         [_dataArr addObjectsFromArray:response];
@@ -108,7 +113,7 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-   _collectionView.footer.hidden=_dataArr.count==0;
+   _collectionView.mj_footer.hidden=_dataArr.count==0;
     return _dataArr.count;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

@@ -29,7 +29,7 @@
         [_image setContentMode:UIViewContentModeScaleAspectFit];
         _image.clipsToBounds=YES;
         _image.layer.masksToBounds=YES;
-     
+        [self addSubview:_image];
         
         _label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 30)];
         _label.textAlignment=NSTextAlignmentCenter;
@@ -74,6 +74,7 @@
 {
     PlayerCenter *ce= [PlayerCenter sharePlayerCenter];
     _label.text=[NSString stringWithFormat:@"%@-%@",ce.m.name,ce.m.author];
+    
     [_image setImageWithURL:[NSURL URLWithString:ce.m.imgUrl]placeholderImage:[UIImage imageNamed:@"35.jpg"]];
     self.image11.image=_image.image;
     

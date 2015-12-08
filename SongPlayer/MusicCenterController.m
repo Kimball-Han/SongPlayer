@@ -14,7 +14,7 @@
 #import "SongImageView.h"
 #import <UIImageView+AFNetworking.h>
 #import "ListTCell.h"
-#import "UMSocial.h"
+
 #import "PlayerCenter.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "LocalViewController.h"
@@ -48,27 +48,27 @@
 
 //分享
 - (IBAction)sharetoweibo:(id)sender {
-    //分享实现
-    [UMSocialSnsService presentSnsIconSheetView:self
-                                         appKey:@"55555d7467e58e80b9000d96"
-                                      shareText:[NSString stringWithFormat:@"%@   %@",[PlayerCenter sharePlayerCenter].m.des,[PlayerCenter sharePlayerCenter].m.NetLinkUrl]
-                                     shareImage:[UIImage imageNamed:@"35.jpg"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,nil]
-                                       delegate:(id)self];
-    
-    //分享附加图片
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:[PlayerCenter sharePlayerCenter].m.imgUrl];
+//    //分享实现
+//    [UMSocialSnsService presentSnsIconSheetView:self
+//                                         appKey:@"55555d7467e58e80b9000d96"
+//                                      shareText:[NSString stringWithFormat:@"%@   %@",[PlayerCenter sharePlayerCenter].m.des,[PlayerCenter sharePlayerCenter].m.NetLinkUrl]
+//                                     shareImage:[UIImage imageNamed:@"35.jpg"]
+//                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,nil]
+//                                       delegate:(id)self];
+//    
+//    //分享附加图片
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:[PlayerCenter sharePlayerCenter].m.imgUrl];
 }
-//实现回调方法（可选）：
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
+////实现回调方法（可选）：
+//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+//{
+//    //根据`responseCode`得到发送结果,如果分享成功
+//    if(response.responseCode == UMSResponseCodeSuccess)
+//    {
+//        //得到分享到的微博平台名
+//        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+//    }
+//}
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         

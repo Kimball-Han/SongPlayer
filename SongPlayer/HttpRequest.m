@@ -322,8 +322,10 @@
 {
     //NSLog(@"%@",strUrl);
     [_manager GET:strUrl parameters:nil success:^(AFHTTPRequestOperation *opreation,id response){
+        
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
         NSDictionary *subDic=dic[@"songurl"];
+        
         if (dic[@"songurl"] !=[NSNull null]) {
            
             playeSongMoel *m=[[playeSongMoel alloc] init];
@@ -334,6 +336,7 @@
             
             m.lrclink=dic[@"songinfo"][@"lrclink"];
             m.imgUrl=dic[@"songinfo"][@"artist_500_500"];
+            
             m.des=[NSString stringWithFormat:@"%@-%@ ",m.name,m.author];
             dispatch_queue_t main=dispatch_get_main_queue();
             dispatch_async(main, ^{

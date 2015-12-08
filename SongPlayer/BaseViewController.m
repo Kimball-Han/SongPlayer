@@ -14,32 +14,15 @@
 @end
 
 @implementation BaseViewController
-{
-    MusicCenterController *center;
-    UIImageView *view1;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden=YES;
-    view1=[[UIImageView alloc] initWithFrame:CGRectMake(12, Screen_Height-58, 50, 50)];
+   
     
-    view1.userInteractionEnabled=YES;
-    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onclick)];
-    [view1 addGestureRecognizer:tap];
-    [self.view addSubview:view1];
-    view1.image=[UIImage imageNamed:@"bg_listen-knowledge_nocover_bg"];
-    
-      center=[MusicCenterController CenterController];
 
 }
--(void)onclick
-{
-   
-    [self presentViewController:center animated:YES completion:^{
-        
-    }];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

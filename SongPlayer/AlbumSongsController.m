@@ -26,11 +26,14 @@
     _collview.dataSource=self;
     _collview.delegate=self;
     [_collview registerNib:[UINib nibWithNibName:@"MobCell" bundle:nil] forCellWithReuseIdentifier:@"MOB"];
-    [self.collview addLegendHeaderWithRefreshingBlock:^{
+    //[self.collview addLegendHeaderWithRefreshingBlock:^{
+    self.collview.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.offset=0;
         [self getData];
     }];
-    [self.collview.header beginRefreshing];
+    
+    //}];
+    [self.collview.mj_header beginRefreshing];
 //    [self.collview addLegendFooterWithRefreshingBlock:^{
 //        self.offset=0;
 //        [self getData];
@@ -43,10 +46,10 @@
         if (self.offset==0) {
             [_dataArr removeAllObjects];
             [_dataArr addObjectsFromArray:response];
-            [_collview.header endRefreshing];
+            [_collview.mj_header endRefreshing];
         }else{
         [_dataArr addObjectsFromArray:response];
-            [_collview.footer endRefreshing ];
+            [_collview.mj_footer endRefreshing ];
         }
         [self.collview reloadData];
         
@@ -57,7 +60,7 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-     _collview.footer.hidden=_dataArr.count==0;
+     _collview.mj_footer.hidden=_dataArr.count==0;
     return _dataArr.count;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
